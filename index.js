@@ -1,21 +1,3 @@
-// const express =require('express');
-// const { MongoClient } = require('mongodb');
-
-
-// const app = express();
-// const port = process.env.PORT || 5000;
-
-// const uri = "mongodb+srv://<username>:<password>@cluster0.tntzi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-// app.get('/', (req, res) =>{
-//           res.send('watch server site is runnig');
-// })
-
-// app.listen(port, () =>{
-//           console.log('surver is running', port);
-// })
-
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
@@ -26,7 +8,7 @@ require('dotenv').config()
 const app = express();
 const port = 5000;
 
-//Middlee ware
+//Middleware
 app.use(cors());
 app.use(express.json());
 
