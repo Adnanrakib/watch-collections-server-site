@@ -53,7 +53,7 @@ async function run() {
 
 
                     //  POST API
-                    app.post('/booking', async (req, res) => {
+                    app.post('/watch', async (req, res) => {
                               const booking = req.body;
                               console.log('hit the post api', booking);
 
@@ -67,6 +67,15 @@ async function run() {
                               const id = req.params.id;
                               const query = { _id: ObjectId(id) };
                               const result = await servicesCollection.deleteOne(query);
+                              res.json(result);
+                    })
+                    ///
+                    app.put('/users', async(req, res) =>{
+                              const user = req.body;
+                              console.log('put', user);
+                              const filter ={ email: user.email};
+                              const updateDoc = {$set: {role: 'admin'}};
+                              const result = await usersCollection.updateOne(filter, updateDoc);
                               res.json(result);
                     })
 
