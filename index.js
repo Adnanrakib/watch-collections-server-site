@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //Middleware
 app.use(cors());
@@ -70,7 +70,7 @@ async function run() {
                               res.json(result);
                     })
                     ///
-                    app.put('/users', async(req, res) =>{
+                    app.put('/users/admin', async(req, res) =>{
                               const user = req.body;
                               console.log('put', user);
                               const filter ={ email: user.email};
